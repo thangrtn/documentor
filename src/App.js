@@ -1,11 +1,11 @@
 import React from 'react' ;
-import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route ,useLocation } from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
 import Services from './pages/services';
 import Signin from './pages/signin';
+import './App.css';
 
 export const Header = () => {
   const location = useLocation();
@@ -19,13 +19,15 @@ export const Header = () => {
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/about' exact component={About} />
-        <Route path='/services' exact component={Services} />
-        <Route path='/signin' exact component={Signin} />
-      </Switch>
+      <div className="app">
+        <Header />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/about' exact component={About} />
+          <Route path='/services' exact component={Services} />
+          <Route path='/signin' exact component={Signin} />
+        </Switch>
+      </div>
     </Router>
   );
 }
