@@ -21,7 +21,7 @@ function FormLogin (){
                 <label className="input-lb">Password</label>
                 <input className="text-input"  placeholder="password" type="password" value={Password} onChange={(e) => {setPassword(e.target.value)}}></input>
             </div>
-            <button className="btn-login" onClick={() => {LoginFunc()}}>LOGIN</button>
+            <button className="btn-login" onClick={() => {LoginFunc()}} >LOGIN</button>
         </div>
     );
 }
