@@ -1,6 +1,6 @@
 import React from 'react'
-import FormSignIn from '../components/signin/form-login'
-import '../components/signin/form-login.css';
+import FormSignIn from '../components/Signin/form-login'
+import '../components/Signin/form-login.css';
 const Signin = () => {
     return (
         <div className="signinelement">

@@ -6,6 +6,7 @@ import Home from './pages';
 import About from './pages/about';
 import Services from './pages/services';
 import Signin from './pages/signin';
+import Mainteacher from './pages/mainteacher';
 
 export const Header = () => {
   const location = useLocation();
@@ -25,6 +26,8 @@ function App() {
         <Route path='/about' exact component={About} />
         <Route path='/services' exact component={Services} />
         <Route path='/signin' exact component={Signin} />
+        <Route path='/mainteacher' exact component={Mainteacher} />
+
       </Switch>
     </Router>
   );

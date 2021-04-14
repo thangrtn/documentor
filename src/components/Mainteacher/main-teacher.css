@@ -1,0 +1,56 @@
+.top-text {
+    height: 100%;
+    margin: 36px 120px 0px 120px;
+    border: 1px solid #eee;
+}
+
+h2 {
+    color: #FFA012;
+}
+
+.top-btn {
+    
+}
+
+.btn {
+    background-color: #FFA012;
+    float: right;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px
+    
+
+}
+
+.top-box {
+    margin-top: 48px;
+    border: 2px solid orange;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.bx {
+    
+    color: #FFA012;
+    text-align: center;
+}
+
+.btn-detail {
+    position: relative;
+    width: 10%;
+    background-color: white;
+    color: #FFA012;
+    border-color: #FFA012;
+    border-radius: 30px;
+    padding:10px;
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    cursor: pointer;
+
+}
