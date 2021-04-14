@@ -55,12 +55,13 @@
 
 .form-input {
     margin:  25px 0;
+    
 }
 
 .input-lb{
     display: block;
     text-align: left;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .text-input {
@@ -68,6 +69,7 @@
     height: 50px;
     border: none;
     border-bottom: 3px solid #FFA012;
+    font-size: 16px;
 }
 
 .text-input:focus {
