@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FormSignIn from '../components/signin/form-login'
 const Signin = () => {
     return (
         <div style={{
@@ -8,7 +8,7 @@ const Signin = () => {
             alignItems: 'center', 
             height: '90vh'
         }}>
-            <h1>Sign In</h1>
+            <FormSignIn/>
         </div>
     )
 }

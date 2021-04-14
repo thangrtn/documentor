@@ -20,10 +20,10 @@ const Navbar = () => {
             </NavLink>
             <Bars />
             <NavMenu>
-                <NavLink className="font2" to="/about" activeStyle>
+                <NavLink className="font2" to="/about" >
                     หน้าหลัก
                 </NavLink>
-                <NavLink className="font2" to="/services" activeStyle>
+                <NavLink className="font2" to="/services" >
                    แบบฟอร์ม
                 </NavLink>
                 <NavBtnLink className="font2" to='/signin'>Sign In</NavBtnLink> 
