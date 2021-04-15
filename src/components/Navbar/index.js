@@ -26,7 +26,7 @@ const Navbar = () => {
                 <NavLink className="font2" to="/services" >
                    แบบฟอร์ม
                 </NavLink>
-                <NavBtnLink className="font2" to='/signin'>Sign In</NavBtnLink> 
+                <NavBtnLink className="font2" to='/signin'>เข้าสู่ระบบ</NavBtnLink> 
             </NavMenu>
             <NavBtn>
                 {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink>  */}
