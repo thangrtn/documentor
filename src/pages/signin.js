@@ -4,7 +4,9 @@ import '../components/Signin/form-login.css';
 const Signin = () => {
     return (
         <div className="signinelement">
+            <div className="logo-bg">
             <FormSignIn/>
+            </div>
         </div>
     )
 }

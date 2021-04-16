@@ -1,0 +1,89 @@
+.landingelement {
+    color: #ffffff; 
+    height: 100%;
+    width: 100%;
+}
+
+.logo-landingpage {
+    background-image: url(../../images/landingpage.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+.landingpagebox {
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    text-align: center;
+    height: auto;
+}
+
+.landingtext {
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+    top: 42%;
+    left: 10%;
+    text-align: center;
+    height: auto;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.landinginfo {
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    text-align: center;
+    height: auto;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.btn-landingservice {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px;
+    position: absolute;
+    width: 124px;
+    height: 49px;
+    left: 10%;
+    top: 62%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    color: #FFA012;
+    margin: auto;
+    height: 40px;
+    font-size: 24px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.btn-landingservice:focus {
+    outline: none;
+}
+
+.iconlanding {
+    color : black ;
+    margin-left: 10%;
+}
+
+
+
+

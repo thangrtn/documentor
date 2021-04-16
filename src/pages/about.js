@@ -1,14 +1,13 @@
 import React from 'react'
+import Landingpage from '../components/Landingpage/landing-page'
+import '../components/Landingpage/landing-page.css';
 
 const About = () => {
     return (
-        <div style={{
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            height: '90vh'
-        }}>
-            <h1>Abouttt</h1>
+        <div className="landingelement">
+            <div className="logo-landingpage">
+            <Landingpage/>
+            </div>
         </div>
     )
 }

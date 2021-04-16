@@ -1,5 +1,4 @@
 import React from 'react' ;
-import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route ,useLocation } from 'react-router-dom';
 import Home from './pages';
@@ -20,15 +19,15 @@ export const Header = () => {
 function App() {
   return (
     <Router>
-      <Header />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/about' exact component={About} />
-        <Route path='/services' exact component={Services} />
-        <Route path='/signin' exact component={Signin} />
-        <Route path='/mainteacher' exact component={Mainteacher} />
-
-      </Switch>
+      <div className="app">
+        <Header />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/about' exact component={About} />
+          <Route path='/services' exact component={Services} />
+          <Route path='/signin' exact component={Signin} />
+        </Switch>
+      </div>
     </Router>
   );
 }

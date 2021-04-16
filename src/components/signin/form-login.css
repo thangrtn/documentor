@@ -1,3 +1,77 @@
 .signinelement {
-    display: flex;
+    color: #FFA012; 
+    height: 100%;
+    width: 100%;
 }
+
+.logo-bg {
+    background-image: url(../../images/loginbg.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 100%;
+}
+
+.font_login {
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-login {
+    width: 100%;
+    max-width: 400px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    text-align: center;
+    height: auto;
+}
+
+.btn-login {
+    display: block;
+    width: 100%;
+    background-color: #FFA012;
+    border-radius: 30px;
+    color: white;
+    margin: auto;
+    height: 40px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 2px 1px 10px rgb(255 217 15 / 50%);
+    margin-top: 50px;
+    cursor: pointer;
+
+}
+
+.btn-login:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #FFA012;
+    box-shadow: none;
+}
+
+.btn-login:focus {
+    outline: none;
+}
+
+.form-input {
+    margin:  25px 0;
+    
+}
+
+.input-lb{
+    display: block;
+    text-align: left;
+    font-size: 24px;
+}
+
+.text-input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 3px solid #FFA012;
+    font-size: 16px;
+}
+
+.text-input:focus {
+    outline: none;
+  }
