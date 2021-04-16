@@ -26,6 +26,8 @@ function App() {
           <Route path='/about' exact component={About} />
           <Route path='/services' exact component={Services} />
           <Route path='/signin' exact component={Signin} />
+          <Route path='/mt' exact component={Mainteacher} />
+
         </Switch>
       </div>
     </Router>
