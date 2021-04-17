@@ -6,6 +6,9 @@ import About from './pages/about';
 import Services from './pages/services';
 import Signin from './pages/signin';
 import Mainteacher from './pages/mainteacher';
+import { Helmet } from 'react-helmet'
+
+
 
 export const Header = () => {
   const location = useLocation();
@@ -19,6 +22,7 @@ export const Header = () => {
 function App() {
   return (
     <Router>
+      <Helmet><title>Documentor</title></Helmet>
       <div className="app">
         <Header />
         <Switch>
