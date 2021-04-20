@@ -5,7 +5,7 @@
 }
 
 
-h2 {
+.top-x h2 {
     color: #FFA012;
 }
 
@@ -16,7 +16,7 @@ h2 {
     
 }
 
-.btn {
+button.btn {
     
     float: right;
     flex-direction: row;
