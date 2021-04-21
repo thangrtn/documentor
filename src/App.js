@@ -6,6 +6,7 @@ import About from './pages/about';
 import Services from './pages/services';
 import Signin from './pages/signin';
 import Mainteacher from './pages/mainteacher';
+import Ro01 from './pages/ro01';
 import { Helmet } from 'react-helmet'
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path='/services' exact component={Services} />
           <Route path='/signin' exact component={Signin} />
           <Route path='/mt' exact component={Mainteacher} />
+          <Route path='/ro' exact component={Ro01} />
 
         </Switch>
       </div>
