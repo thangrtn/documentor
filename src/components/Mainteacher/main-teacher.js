@@ -10,10 +10,10 @@ function Mteacher() {
             
 
             <div className="top-b">
-                <button className="btn">วันที่ล่าสุด  <FaChevronDown /></button>
-                <button className="btn">ประเภทคำร้อง  <FaChevronDown /></button>
-                <button className="btn">เรียงตามชื่อ  <FaChevronDown /></button>
-                <button className="btn">เรียงตามรหัส  <FaChevronDown /></button>
+                <button className="btnn">วันที่ล่าสุด  <FaChevronDown /></button>
+                <button className="btnn">ประเภทคำร้อง  <FaChevronDown /></button>
+                <button className="btnn">เรียงตามชื่อ  <FaChevronDown /></button>
+                <button className="btnn">เรียงตามรหัส  <FaChevronDown /></button>
             </div>    
 
                 <div className="top-box">

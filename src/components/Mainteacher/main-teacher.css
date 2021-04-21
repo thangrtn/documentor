@@ -1,25 +1,23 @@
 .top-text {
-    margin: 0px 120px 0px 120px ;
+    margin: 50px 120px 0px 120px ;
 
     
 }
 
 
-h2 {
+.top-x h2 {
     color: #FFA012;
 }
 
 .top-b {
-    width: 100%;
     height: auto;
     margin: 0 auto;
     
 }
 
-.btn {
-    
+button.btnn {
     float: right;
-    flex-direction: row;
+    
     justify-content: center;
     align-items: center;
     border: 1px solid #FFA012;
@@ -33,13 +31,15 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 13px 12px
+    
+    
 
 }
 .lg {
     color: white;
 }
 
-.btn:hover {
+.btnn:hover {
     background-color: white;
     color: #000;
     transition:0.2s;
