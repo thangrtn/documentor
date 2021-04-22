@@ -1,13 +1,19 @@
-import React from 'react'
-import { Col, Form , Button , Row , InputGroup , FormControl ,Container} from 'react-bootstrap';
-import './r1.css';
+import React, { useState } from 'react';
+import { Col } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import './r16.css';
 
-function r1() {
+
+ 
+export default function Form16() {
+    const [startdate, setStartdate] = useState(new Date().toISOString());
+    const [exdate, setExdate]       = useState(new Date().toISOString());
     return (
         <div className="ctn">
             <div className="background-content">
-                <div className="title"><h2 className="htop">คำร้องทั่วไป (RO-01)</h2></div>
-
+                <div className="title"><h2 className="htop">คำร้องขอลาป่วย/ลาป่วย (RO-16)</h2></div>
+                
                 <Container>
                     <div className="main-content">
                         <h2 className="htop2">ข้อมูลนักศึกษา</h2>
@@ -115,14 +121,52 @@ function r1() {
                                     <Form>
                                         <Form.Row>
                                             <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                <Form.Label>เรื่อง</Form.Label>
-                                                <Form.Control type="เรื่อง" placeholder="เรื่อง" />
+                                                <Form.Label>เรียน</Form.Label>
+                                                <Form.Control type="email" placeholder="เรียน" />
                                             </Form.Group>
 
                                             <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                <Form.Label>เรียน</Form.Label>
-                                                <Form.Control type="เรียน" placeholder="เรียน" />
+                                                <Form.Label>Email</Form.Label>
+                                                <Form.Control type="email" placeholder="Email" />
                                             </Form.Group>
+
+                                            <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                <Form.Label>Email</Form.Label>
+                                                <Form.Control type="email" placeholder="Email" />
+                                            </Form.Group>
+
+                                        </Form.Row>
+
+                                        <Form.Row>
+
+                                            <Form.Group as={Col} sm={2} controlId="formGridState">
+                                                <Form.Label>ความประสงค์</Form.Label>
+                                                <Form.Control as="select" defaultValue="Choose...">
+                                                    <option>Choose...</option>
+                                                    <option>ลาป่วย</option>
+                                                    <option>ลากิจ</option>
+
+                                                </Form.Control>
+                                            </Form.Group>
+
+                                            <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                <Form.Label>ระยะเวลา</Form.Label>
+                                                <Form.Control type="ระยะเวลา" placeholder="ระยะเวลา" />
+                                            </Form.Group>
+
+                                            <Form.Group as={Col} sm={2} controlId="formGridState">
+                                                <Form.Label>ตั้งแต่วันที่</Form.Label>
+                                                <Form.Control type="date" name="dob" placeholder="Date of  Start"  value={startdate} onChange={(e) => {setStartdate(e.target.value)}}/>
+                                            </Form.Group>
+
+
+                                            <Form.Group as={Col} sm={2} controlId="formGridState">
+                                                <Form.Label>ถึงวันที่</Form.Label>
+                                                <Form.Control type="date" name="dob" placeholder="Date of Expire"  value={exdate} onChange={(e) => {setExdate(e.target.value)}}/>
+                                            </Form.Group>
+
+
+
                                         </Form.Row>
 
                                         <Form.Row>
@@ -151,8 +195,8 @@ function r1() {
                     </div>
 
                     <div className="btng">
-                        <button className="btn-approve" onClick={() => {r1()}} >Approve </button>
-                        <button className="btn-approve2" onClick={() => {r1()}} >Decline </button> 
+                        <button className="btn-approve" onClick={() => {Form16()}} >Approve </button>
+                        <button className="btn-approve2" onClick={() => {Form16()}} >Decline </button> 
     
                     </div>
                 </Container>
@@ -161,4 +205,3 @@ function r1() {
     )
 }
 
-export default r1 ;

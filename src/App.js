@@ -8,6 +8,8 @@ import Signin from './pages/signin';
 import Mainteacher from './pages/mainteacher';
 import LastTeacher from './pages/lastteacher';
 import Ro1 from './pages/ro1';
+import Ro16 from './pages/ro16';
+import Ro26 from './pages/ro26';
 import { Helmet } from 'react-helmet'
 
 
@@ -35,6 +37,8 @@ function App() {
           <Route path='/mt' exact component={Mainteacher} />
           <Route path='/lt' exact component={LastTeacher} />
           <Route path='/r1' exact component={Ro1} />
+          <Route path='/r16' exact component={Ro16} />
+          <Route path='/r26' exact component={Ro26} />
 
 
 
