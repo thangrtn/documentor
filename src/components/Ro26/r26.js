@@ -8,7 +8,7 @@ import './r26.css';
  
 export default function Form26() {
     return (
-        <div className="ctn">
+        <div className="ctn2">
             <div className="background-content">
                 <div className="title"><h2 className="htop">คำร้องขอลาป่วย/ลาป่วย (RO-16)</h2></div>
                 
@@ -125,107 +125,107 @@ export default function Form26() {
                                                 <Form>
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
+                                                        </Form.Group>
+                                                    </Form.Row> 
+
+                                                    <Form.Row>
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
+                                                        </Form.Group>
+
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="email" placeholder="กลุ่มที่" />
+                                                        </Form.Group>
+
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
                                                 </Form>
                                             </div>
                                             <div>
-                                                <h2 ClassName="htop2">ลดรายวิชา</h2>
+                                                <h2 ClassName="htop2">ถอนรายวิชา</h2>
                                                 <Form>
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row>
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
                                                 </Form>
@@ -235,111 +235,111 @@ export default function Form26() {
                                     <Col sm={6}>
                                         <div className="form-right">
                                             <div>
-                                                <h2 ClassName="row-1">เพิ่มรายวิชา</h2>
+                                                <h2 ClassName="row-1">ลดรายวิชา</h2>
                                                 <Form>
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="email" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
+                                                        </Form.Group>
+                                                    </Form.Row> 
+
+                                                    <Form.Row>
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
+                                                        </Form.Group>
+
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
+                                                        </Form.Group>
+
+                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
                                                 </Form>
                                             </div>
                                             <div>
-                                                <h2 ClassName="htop2">ลดรายวิชา</h2>
+                                                <h2 ClassName="htop2">เปลี่ยนกลุ่มรายวิชา</h2>
                                                 <Form>
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="email" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row>
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="email" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
 
                                                     <Form.Row>
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>เรียน</Form.Label>
-                                                            <Form.Control type="email" placeholder="เรียน" />
+                                                            <Form.Label>รหัสวิชา</Form.Label>
+                                                            <Form.Control type="email" placeholder="รหัสวิชา" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>กลุ่มที่</Form.Label>
+                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่" />
                                                         </Form.Group>
 
                                                         <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>Email</Form.Label>
-                                                            <Form.Control type="email" placeholder="Email" />
+                                                            <Form.Label>หน่วยกิต</Form.Label>
+                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต" />
                                                         </Form.Group>
                                                     </Form.Row> 
                                                 </Form>
@@ -348,7 +348,6 @@ export default function Form26() {
                                     </Col>
                                 </Row>
 
-                                <div className="form-right"></div>
                             </div>
                         </div>
                     </div>
