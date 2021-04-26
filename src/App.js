@@ -12,7 +12,6 @@ import { Helmet } from 'react-helmet'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-
 export const Header = () => {
   const location = useLocation();
   if ( location.pathname !== '/signin'){
