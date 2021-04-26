@@ -1,7 +1,7 @@
 import React from 'react'
 import './landing-page.css';
 import Landingpagelogo from '../../images/arrow-right.svg';
-
+import { Link } from 'react-router-dom';
 
 const Landingpage = () => {
     return (
@@ -11,9 +11,9 @@ const Landingpage = () => {
                 <h2 className= "landinginfo">When students complete the form as selected. The system will send documents to the teachers' e-mail 
                                         according to the level. Students can wait to receive feedback by  your email.</h2>
             </div>
-            <button className="btn-landingservice" onClick={() => {Landingpage()}} >Service <img className="iconlanding" src={Landingpagelogo} alt="service"/></button> 
-            
-            
+            <Link to="/services">
+                <button className="btn-landingservice" >Service <img className="iconlanding" src={Landingpagelogo} alt="service"/></button> 
+            </Link>
         </div>
     );
 }

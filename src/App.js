@@ -6,6 +6,7 @@ import About from './pages/about';
 import Services from './pages/services';
 import Signin from './pages/signin';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const Header = () => {
   const location = useLocation();
