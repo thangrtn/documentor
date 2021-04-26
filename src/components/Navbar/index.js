@@ -20,12 +20,10 @@ const Navbar = () => {
             </NavLink>
             <Bars />
             <NavMenu>
-                <NavLink className="font2" to="/about" >
+                <NavLink className="font2" to="/mt" >
                     หน้าหลัก
                 </NavLink>
-                <NavLink className="font2" to="/services" >
-                   แบบฟอร์ม
-                </NavLink>
+                
                 <NavBtnLink className="font2" to='/signin'>เข้าสู่ระบบ</NavBtnLink> 
             </NavMenu>
             <NavBtn>
