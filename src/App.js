@@ -12,6 +12,7 @@ import { Helmet } from 'react-helmet'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const Header = () => {
   const location = useLocation();

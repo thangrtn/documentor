@@ -1,16 +1,14 @@
 import React from 'react'
-/* import Bgdown from '../images/vectordownright.svg' */
+import ServicesBox from '../components/Services/services'
+import '../components/Services/services.css';
+
 
 const Services = () => {
     return (
-        <div style={{
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center', 
-            height: '90vh'
-        }}>
-            <h1>Services</h1>
-            
+        <div className="serviceselement">
+            <div className="logo-service">
+                <ServicesBox />  
+            </div>      
         </div>
     )
     
