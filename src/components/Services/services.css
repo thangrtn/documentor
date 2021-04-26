@@ -54,7 +54,7 @@
 
 .box-ct {
     height: 100%;
-    padding: 0 10%;
+    padding: 0 25%;
 }
 
 .r-100 {
@@ -71,5 +71,4 @@
     position: absolute;
     top: 25%;
     left: 44%;
-    /* margin-top: 30px; */
 }
