@@ -1,10 +1,13 @@
 import React from 'react'
 import './main-teacher.css'
+import { Col , Form, Row, Button, Container} from 'react-bootstrap'
 import { FaChevronDown } from 'react-icons/fa';
 
 function Mteacher() {
     
     return (
+        
+        
         <div className="top-text">
             <div className="top-x"><h2>คำร้องขอที่รอพิจารณา</h2></div>
             
@@ -16,19 +19,54 @@ function Mteacher() {
                 <button className="btnn">เรียงตามรหัส  <FaChevronDown /></button>
             </div>    
 
-                <div className="top-box">
-                    <div className="bx">02/02/64 Ro-01 คำร้องทั่วไป มาลี ศรีสุข 60090500446
-                    <button className="btn-detail" onClick={() => {Mteacher()}}>ดูรายละเอียด</button>
-                    </div>
-                    
-                </div>
+            
 
                 <div className="top-box">
-                    <div className="bx">02/02/64 Ro-01 คำร้องทั่วไป มาลี ศรีสุข 60090500446
-                    <button className="btn-detail" onClick={() => {Mteacher()}}>ดูรายละเอียด</button>
-                    </div>
                     
+                <Row>
+                    
+                    <Col sm={12}>
+                    
+                        <div className="top-box-new">
+                            <div className="bx-new">
+                                <Form>
+                                    <Form.Row>
+                                        <Form.Group as={Col} sm={2}>
+                                            04/22/64
+                                        </Form.Group>
+
+                                        <Form.Group as={Col} sm={2}>
+                                            RO-01
+                                        </Form.Group>
+
+                                        <Form.Group as={Col} sm={2}>
+                                            คำร้องทั่วไป
+                                        </Form.Group>
+
+                                        <Form.Group as={Col} sm={2}>
+                                            มาลี สวยมาก
+                                        </Form.Group>
+
+                                        <Form.Group as={Col} sm={2}>
+                                            60090500499
+                                        </Form.Group>
+
+                                        <Button as={Col} sm={2}>ดูรายละเอียด</Button>
+
+                                    </Form.Row>
+                                </Form>
+                            </div>
+                        </div>
+                        
+                    </Col>
+                    
+                </Row>
                 </div>
+                
+                
+                
+
+                
         </div>
         
     )
