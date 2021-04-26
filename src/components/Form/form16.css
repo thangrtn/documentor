@@ -1,0 +1,160 @@
+.Container {
+    margin-bottom: 40px;
+}
+
+
+.ctn {
+    background-image: url('../../images/footform.svg');
+
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size:contain; 
+    height:1250px;
+
+    
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .ctn {
+        background-image: url('../../images/footform.svg');
+
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size:contain; 
+        height: auto;
+        
+
+    }
+}
+
+
+.background-content {
+
+    margin: 40px 0px 0px 0px;
+   padding:20px;
+    
+} 
+
+
+.htop {
+    text-align: center;
+    color: #FFA012;
+    
+}
+
+.htop2 {
+    color: #FFA012;
+    padding-bottom: 20px;
+
+}
+
+.main-content {
+    margin: 40px 0px 0px 00px;
+    border: 1px solid #FFA012;
+    padding:20px 40px 20px 40px;
+    border-radius: 10px;
+}
+
+.form-ro1{
+    color: #FFA012;
+    
+}
+.form-ro1-bottom {
+    border-top: 3px solid #FFA012;
+    margin: 20px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
+
+}
+
+.form-ro1 label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-ro1 .form-control {
+    border: 1px solid #FFA012;
+    border-radius:10px; 
+}
+
+.test-btn {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    
+}
+
+button.btngreen {
+    width:110px;
+    height:50px;
+    padding: 13px 12px;
+    margin: 10px;
+    border-radius: 30px;
+    background:red;
+}
+
+
+.btn-approve {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px;
+    width: 106px;
+    height: 49px;
+    left: 40%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color: #FFA012;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-approve:focus {
+    outline: none;
+}
+
+.btn-approve2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px;
+    width: 106px;
+    height: 49px;
+    left: 40%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    background: #FFA012;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color :#FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.btng {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    
+}
+
+.iconleft {
+    margin-right: 10%;
+}
+
+.iconright {
+    margin-left: 10%;
+    
+}
+
+.iconpolygon {
+    margin-right: 2%;
+    
+}
