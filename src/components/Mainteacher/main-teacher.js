@@ -15,7 +15,7 @@ function Mteacher() {
     
     return (
         
-        
+        <div class="ctnm">
         <div className="top-text">
             <div className="top-x"><h2>คำร้องขอที่รอพิจารณา</h2></div>
             
@@ -76,6 +76,7 @@ function Mteacher() {
                 
 
                 
+        </div>
         </div>
         
     )

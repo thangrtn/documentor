@@ -4,6 +4,13 @@
     
 }
 
+.ctnm {
+    background-image: url('../../images/footform.svg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size:contain; 
+    height:786px;
+}
 
 .top-x h2 {
     color: #FFA012;
