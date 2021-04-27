@@ -14,13 +14,13 @@ const Navbar = () => {
     return (
         <>
         <Nav>
-            <NavLink to ="/">
+            <NavLink to ="/main">
                     <img className="logo-container" src={Logo} alt="logo"/>
                     <h1 className="font1">Documentor</h1>
             </NavLink>
             <Bars />
             <NavMenu>
-                <NavLink className="font2" to="/mt" >
+                <NavLink className="font2" to="/main" >
                     หน้าหลัก
                 </NavLink>
                 

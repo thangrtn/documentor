@@ -6,6 +6,8 @@ import Signin from './pages/signin';
 import Form1 from './pages/f01';
 import Form16 from './pages/f16';
 import Form26 from './pages/f26';
+import MainT from './pages/mainteacher'
+import LastT from './pages/lastteacher'
 import { Helmet } from 'react-helmet'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,6 +30,9 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/signin' exact component={Signin} />
+          <Route path='/main' exact component={MainT} />
+          <Route path='/last' exact component={LastT} />
+          
           <Route path='/form1' exact component={Form1} />
           <Route path='/form16' exact component={Form16} />
           <Route path='/form26' exact component={Form26} />

@@ -1,9 +1,17 @@
 import React from 'react'
 import './main-teacher.css'
 import { Col , Form, Row, Button, Container} from 'react-bootstrap'
+import { Link , useHistory } from 'react-router-dom'
 import { FaChevronDown } from 'react-icons/fa';
 
 function Mteacher() {
+
+    const history = useHistory();
+
+    const routeChange = () =>{ 
+    let path = `form1`; 
+    history.push(path);
+  }
     
     return (
         
@@ -51,7 +59,8 @@ function Mteacher() {
                                             60090500499
                                         </Form.Group>
 
-                                        <Button as={Col} sm={2}>ดูรายละเอียด</Button>
+                                        <Button as={Col} sm={2} onClick={routeChange}>ดูรายละเอียด</Button>
+                                        
 
                                     </Form.Row>
                                 </Form>

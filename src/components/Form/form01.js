@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Form , Button , Row , InputGroup , FormControl ,Container} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import './form01.css';
 import Form26logo from '../../images/left.svg'
 import Form26logoright from '../../images/right.svg'
@@ -137,12 +138,32 @@ function Stuform01() {
                                 </div>
                             </div>
                         </div>
+
+                        <div className="main-content">
+                        <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
+                        <div className="form-ro1">
+                            <Form>
+                                <Form.Row>
+                                    <Form.Group as={Col} sm={12}controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</Form.Label>
+                                        <Form.Control as="textarea" rows={3} placeholder="กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ" />
+                                    </Form.Group>
+                                </Form.Row>
+                            </Form>
+                        </div>
+                    </div>
     
                         
     
                         <div className="btng">
-                        <button className="btn-approve" onClick={() => {Stuform01()}} ><img className="iconleft" src={Form26logo} alt="left"/> ยกเลิก </button>
-                        <button className="btn-approve2" onClick={() => {Stuform01()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
+                            <Link to="/main">
+                                <button className="btn-approve" onClick={( ) => {Stuform01()}} ><img className="iconleft" src={Form26logo} alt="left"/> ยกเลิก </button>
+                            </Link>
+
+                            <Link to="/last">
+                                <button className="btn-approve2" onClick={() => {Stuform01()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
+                            </Link>
+
      
         
                         </div>

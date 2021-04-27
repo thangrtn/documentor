@@ -182,6 +182,20 @@ export default function Stuform16() {
                         </div>
                     </div>
 
+                    <div className="main-content">
+                        <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
+                        <div className="form-ro1">
+                            <Form>
+                                <Form.Row>
+                                    <Form.Group as={Col} sm={12}controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</Form.Label>
+                                        <Form.Control as="textarea" rows={3} placeholder="กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ" />
+                                    </Form.Group>
+                                </Form.Row>
+                            </Form>
+                        </div>
+                    </div>
+
                 
 
                     <div className="btng">
