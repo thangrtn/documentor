@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './form-login.css';
+import { useHistory } from "react-router-dom"
 
 function FormLogin() {
+    let history = useHistory();
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
-    const LoginFunc = async () => {
-        let data = {
+    const LoginFunc = () => {
+        axios.post('/authentication/signin', {
             username: Username,
             password: Password
-        };
-
-
-        try {
-            const res = await axios.post('/authentication/signin', data);
-            console.log(res);
-        } catch (error) {
-            console.log(error);
-        }
+        }).then((response) => {
+            if(response.data.accessToken){
+                localStorage.setItem('username', Username);
+                localStorage.setItem('accessToken', response.data.accessToken);
+                history.push('/')
+            }
+        }).catch((error) => {
+            console.error(error)
+        }) 
     };
 
     return (
@@ -49,9 +51,7 @@ function FormLogin() {
             </div>
             <button
                 className='btn-login'
-                onClick={() => {
-                    LoginFunc();
-                }}
+                onClick={() => {LoginFunc();}}
             >
                 LOGIN
             </button>

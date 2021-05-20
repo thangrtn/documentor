@@ -4,7 +4,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    useLocation
+    useLocation,
+    Redirect
 } from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
@@ -15,10 +16,9 @@ import Form16 from './pages/f16';
 import Form26 from './pages/f26';
 import { Helmet } from 'react-helmet';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import history from "./utils/history";
 let axiosDefaults = require('axios/lib/defaults');
 axiosDefaults.baseURL = 'http://documentor-kmutt.me/api';
 
@@ -32,6 +32,7 @@ export const Header = () => {
 };
 
 function App() {
+    const token = localStorage.getItem('accessToken');
     return (
         <Router>
             <Helmet>
@@ -43,7 +44,7 @@ function App() {
                     <Route path='/' exact component={Home} />
                     <Route path='/about' exact component={About} />
                     <Route path='/services' exact component={Services} />
-                    <Route path='/signin' exact component={Signin} />
+                    <Route path='/signin' render={() => ( token ? ( <Redirect to="/"/> ) : (<Signin/>) )} exact/>
                     <Route path='/form1' exact component={Form1} />
                     <Route path='/form16' exact component={Form16} />
                     <Route path='/form26' exact component={Form26} />

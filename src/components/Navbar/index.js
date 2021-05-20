@@ -11,8 +11,17 @@ import {
 } from './NavbarElements';
 
 const Navbar = () => {
+    const username = localStorage.getItem('username');
+
+    const Userprofile = () => {
+        return (
+            <div className="user-profile">
+                <p className="user-name">{ username }</p>
+            </div>
+        );
+    };
+
     return (
-        <>
         <Nav>
             <NavLink to ="/">
                     <img className="logo-container" src={Logo} alt="logo"/>
@@ -26,13 +35,12 @@ const Navbar = () => {
                 <NavLink className="font2" to="/services" >
                    แบบฟอร์ม
                 </NavLink>
-                <NavBtnLink className="font2" to='/signin'>เข้าสู่ระบบ</NavBtnLink> 
+                {username ? <Userprofile/> : <NavBtnLink  className="font2" to='/signin'>เข้าสู่ระบบ</NavBtnLink> }
             </NavMenu>
             <NavBtn>
                 {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink>  */}
             </NavBtn>
         </Nav>
-        </>
     )
 }
 
