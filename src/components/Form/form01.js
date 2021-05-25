@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Col, Form ,Container} from 'react-bootstrap';
 import './form01.css';
 import Form26logo from '../../images/left.svg'
@@ -29,7 +29,7 @@ function Stuform01() {
 
 
     // const autoFill01 = () => {
-    //     axios.post('/user/signup-student', {
+    //     axios.get('/user/me', {
     //         title: Title,
     //         name: Name,
     //         studentcode: Studentcode,
@@ -47,8 +47,38 @@ function Stuform01() {
     //     })
     // };
 
+
+    useEffect(() => {
+        axios.get('/user/me', {
+            headers: { 
+                'Authorization' : 'Bearer ' + localStorage.getItem('accessToken')
+            }
+        }).then(res => {
+            const userData = res.data.data
+            setEmail(userData['email'])
+            setTitle(userData['title'])
+            setName(userData['name'])
+            setStudentcode(userData['studentInfo']['student_code'])
+            setSemeter(userData['studentInfo']['semeter'])
+            setAcademicyear(userData['studentInfo']['academic_year'])
+            setFaculty(userData['studentInfo']['faculty'])
+            setDepartment(userData['studentInfo']['department'])
+            setLevel(userData['studentInfo']['level'])
+            setEducationlevel(userData['studentInfo']['education_level'])
+            setCourse(userData['studentInfo']['course'])
+            setStauts(userData['studentInfo']['status'])
+            setGpax(userData['studentInfo']['gpax'])
+            setPhone(userData['studentInfo']['phone'])
+
+        }).catch(err => {
+            console.error(err)
+        })
+      },[]);
+
+
+
     const createForm01 = () => {
-        axios.post('/trasaction/create-ro01', 
+        axios.post('/transaction/create-ro01', 
         {
             title: Teacher_name,
             to_name : To_name,
@@ -57,7 +87,8 @@ function Stuform01() {
         {headers: { 
             'Authorization' : 'Bearer ' + localStorage.getItem('accessToken')
         }}).then((response) => {
-            console.log(response);
+            console.log(response.data);
+
         }).catch((error) => {
             console.error(error);
         }) 
@@ -100,7 +131,7 @@ function Stuform01() {
     
                                             <Form.Group as={Col} sm={3} controlId="formGridPassword">
                                                 <Form.Label>รหัสนักศึกษา</Form.Label>
-                                                <Form.Control type="email" readOnly placeholder="รหัสนักศึกษา"
+                                                <Form.Control type="studentcode" readOnly placeholder="รหัสนักศึกษา"
                                                 value={Studentcode}
                                                 onChange={(e) => {
                                                     setStudentcode(e.target.value);
@@ -172,7 +203,7 @@ function Stuform01() {
                                                 setCourse(e.target.value);
                                             }}>
                                                 <option>Choose...</option>
-                                                <option>ปกติ</option>
+                                                <option>ทั่วไป</option>
                                             </Form.Control>
                                             </Form.Group>
     
@@ -195,7 +226,7 @@ function Stuform01() {
                                                     setStauts(e.target.value);
                                                 }}>
                                                     <option>Choose...</option>
-                                                    <option>ปกติ</option>
+                                                    <option>active</option>
                                                 </Form.Control>
                                             </Form.Group>
     
