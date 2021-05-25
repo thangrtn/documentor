@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react';
-import { Col , Row} from 'react-bootstrap'
+import { Col , Row, Button} from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import Form26logo from '../../images/left.svg'
@@ -11,6 +11,8 @@ import axios from 'axios';
 
  
 export default function StuForm26() {
+    const [ListRequest, setListRequest] = useState([]);
+
     const [Title, setTitle] = useState('');
     const [Name, setName] = useState('');
     const [Studentcode, setStudentcode] = useState('');
@@ -59,7 +61,7 @@ export default function StuForm26() {
         })
       },[]);
 
-      const createForm26 = () => {
+    const createForm26 = () => {
         axios.post('/transaction/create-ro26', 
         {
             course_code : Course_code,
@@ -78,6 +80,29 @@ export default function StuForm26() {
         }) 
     };
 
+    const AddList = () => {
+        setListRequest([...ListRequest,{
+            course_code: Course_code,
+            group_number: Group_number,
+            credit: Credit,
+            type :Type
+        }])
+
+        setCourse_code('')
+        setGroup_number('')
+        setCredit('')
+        setType('')
+    }
+
+    const DeleteList = (id) => {
+        const list = ListRequest.filter((todo, todoIndex) => {
+            return todoIndex !== id
+        })
+        
+        setListRequest(list)
+    }
+
+
 
     return (
         <div className="ctn2">
@@ -87,8 +112,7 @@ export default function StuForm26() {
                 <Container>
                     <div className="main-content">
                         <h2 className="htop2">ข้อมูลนักศึกษา</h2>
-                            <div className="form-ro1">
-                                
+                            <div className="form-ro1">       
                             <Form>
                                         <Form.Row>
                                             <Form.Group as={Col} sm={2} controlId="formGridEmail">
@@ -244,383 +268,96 @@ export default function StuForm26() {
                                     </Form>
 
                             <div class="form-ro1-bottom">
-                                <h2 ClassName="htop3">กรอกคำร้อง</h2>
+                                <h2 ClassName="htop3">เพิ่มคำร้องขอ</h2>
                                 <Row>
-                                    <Col sm={6}>
-                                        <div className="form-left">
-                                            <div>
-                                                <h2 ClassName="row-1"><img className="iconpolygon" src={Form26logopolygon} alt="polygon"/>เพิ่มรายวิชา</h2>
-                                                <Form>
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="email" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-                                                </Form>
-                                            </div>
-                                            <div>
-                                                <h2 ClassName="htop2"><img className="iconpolygon" src={Form26logopolygon} alt="polygon"/>ถอนรายวิชา</h2>
-                                                <Form>
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row>
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-                                                </Form>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col sm={6}>
-                                        <div className="form-right">
-                                            <div>
-                                                <h2 ClassName="row-1"><img className="iconpolygon" src={Form26logopolygon} alt="polygon"/>ลดรายวิชา</h2>
-                                                <Form>
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="email" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-                                                </Form>
-                                            </div>
-                                            <div>
-                                                <h2 ClassName="htop2"><img className="iconpolygon" src={Form26logopolygon} alt="polygon"/>เปลี่ยนกลุ่มรายวิชา</h2>
-                                                <Form>
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="email" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row>
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="email" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-
-                                                    <Form.Row>
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>รหัสวิชา</Form.Label>
-                                                            <Form.Control type="email" placeholder="รหัสวิชา"
-                                                            value={Course_code}
-                                                            onChange={(e) => {
-                                                                setCourse_code(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>กลุ่มที่</Form.Label>
-                                                            <Form.Control type="กลุ่มที่" placeholder="กลุ่มที่"
-                                                            value={Group_number}
-                                                            onChange={(e) => {
-                                                                setGroup_number(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-
-                                                        <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                                                            <Form.Label>หน่วยกิต</Form.Label>
-                                                            <Form.Control type="หน่วยกิต" placeholder="หน่วยกิต"
-                                                            value={Credit}
-                                                            onChange={(e) => {
-                                                                setCredit(e.target.value);
-                                                            }} />
-                                                        </Form.Group>
-                                                    </Form.Row> 
-                                                </Form>
-                                            </div>
-                                        </div>
-                                    </Col>
+                                   
+                                   <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                                                    <Form.Label>รหัสวิชา</Form.Label>
+                                                    <Form.Control placeholder="รหัสวิชา"
+                                                    value={Course_code}
+                                                    onChange={(e) => {
+                                                    setCourse_code(e.target.value);
+                                                        }} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                                                    <Form.Label>กลุ่ม</Form.Label>
+                                                    <Form.Control type="number" placeholder="กลุ่ม"
+                                                    value={Group_number}
+                                                    onChange={(e) => {
+                                                    setGroup_number(e.target.value);
+                                                        }} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                                                    <Form.Label>หน่วยกิต</Form.Label>
+                                                    <Form.Control  type="number" placeholder="หน่วยกิต"
+                                                    value={Credit}
+                                                    onChange={(e) => {
+                                                    setCredit(e.target.value);
+                                                        }} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} sm={2} controlId="formGridState">
+                                            <Form.Label>ประเภท</Form.Label>
+                                            <Form.Control as="select" defaultValue="Choose..."
+                                            value={Type}
+                                            onChange={(e) => {
+                                                setType(e.target.value);
+                                            }}>
+                                                <option value="">Choose...</option>
+                                                <option value="ADD_SUBJECT">เพิ่มรายวิชา</option>
+                                                <option value="CHANGE_COURSE">ลดรายวิชา</option>
+                                                <option value="WITHDRAWAL">ถอนรายวิชา</option>
+                                            </Form.Control>
+                                    </Form.Group>
+                                    <button className="btn-add-new" onClick={() => {AddList()}} > เพิ่ม </button>
+                                   
                                 </Row>
 
                             </div>
+
+                            <div class="form-ro1-bottom">
+                                <h2 ClassName="htop3">รายการคำร้องขอ</h2>
+                                <div className="list-request">
+                                    {ListRequest.map((value, index) => {
+                                        return (
+                                            <Form.Row className="box-list" key={index}>
+                                                <Form.Group as={Col} sm={2} >
+                                                    <Form.Label>รหัสวิชา</Form.Label>
+                                                    <Form.Control readOnly  placeholder="รหัสวิชา"
+                                                    value={value.course_code}
+                                                    />
+                                                </Form.Group>
+                                                <Form.Group  as={Col} sm={2} >
+                                                    <Form.Label>กลุ่ม</Form.Label>
+                                                    <Form.Control readOnly type="number" placeholder="รหัสวิชา"
+                                                    value={value.group_number}
+                                                    />
+                                                </Form.Group>
+                                                <Form.Group as={Col} sm={2}>
+                                                    <Form.Label>หน่วยกิต</Form.Label>
+                                                    <Form.Control readOnly type="number" placeholder="รหัสวิชา"
+                                                    value={value.credit}
+                                                    />
+                                                </Form.Group>
+                                                <Form.Group as={Col} sm={2} >
+                                                    <Form.Label>ประเภท</Form.Label>
+                                                    <Form.Control readOnly as="select" defaultValue="Choose..."
+                                                    value={value.type}
+                                                    >
+                                                        <option value="">Choose...</option>
+                                                        <option value="ADD_SUBJECT">เพิ่มรายวิชา</option>
+                                                        <option value="CHANGE_COURSE">ลดรายวิชา</option>
+                                                        <option value="WITHDRAWAL">ถอนรายวิชา</option>
+                                                    </Form.Control>
+                                                </Form.Group>
+                                                <button className="btn-approve-new" onClick={() => {DeleteList(index)}} > ลบ </button>
+                                            </Form.Row>
+                                            
+                                        )
+                                        
+                                    })}                             
+                                </div>
+                            </div>                
+
                         </div>
                     </div>
 
@@ -629,7 +366,6 @@ export default function StuForm26() {
                     <div className="btng">
                         <button className="btn-approve" onClick={() => {StuForm26()}} ><img className="iconleft" src={Form26logo} alt="left"/> ยกเลิก </button>
                         <button className="btn-approve2" onClick={() => {createForm26()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
-    
                     </div>
                 </Container>
             </div>
