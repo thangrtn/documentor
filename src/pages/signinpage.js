@@ -1,6 +1,6 @@
 import React from 'react'
-import FormSignIn from '../components/Signin/form-login'
-import '../components/Signin/form-login.css';
+import FormSignIn from '../components/signin/form-login.js'
+import '../components/signin/login-style.css';
 
 const Signin = () => {
     return (

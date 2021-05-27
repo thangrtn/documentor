@@ -1,10 +1,9 @@
 import React, { useState, useEffect }from 'react';
-import { Col , Row, Button} from 'react-bootstrap'
+import { Col , Row} from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import Form26logo from '../../images/left.svg'
 import Form26logoright from '../../images/right.svg'
-import Form26logopolygon from '../../images/Polygon.svg'
 import './form26.css';
 import axios from 'axios';
 
@@ -358,6 +357,20 @@ export default function StuForm26() {
                                 </div>
                             </div>                
 
+                        </div>
+                    </div>
+
+                    <div className="main-content">
+                        <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
+                        <div className="form-ro1">
+                            <Form>
+                                <Form.Row>
+                                    <Form.Group as={Col} sm={12}controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</Form.Label>
+                                        <Form.Control as="textarea" rows={3} placeholder="กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ" />
+                                    </Form.Group>
+                                </Form.Row>
+                            </Form>
                         </div>
                     </div>
 

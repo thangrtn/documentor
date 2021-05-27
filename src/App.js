@@ -8,9 +8,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import Home from './pages';
-import About from './pages/about';
-import Services from './pages/services';
-import Signin from './pages/signin';
+import Signin from './pages/signinpage';
 import Form1 from './pages/f01';
 import Form16 from './pages/f16';
 import Form26 from './pages/f26';
@@ -42,9 +40,15 @@ function App() {
                 <Header />
                 <Switch>
                     <Route path='/' exact component={Home} />
-                    <Route path='/about' exact component={About} />
-                    <Route path='/services' exact component={Services} />
-                    <Route path='/signin' render={() => ( token ? ( <Redirect to="/"/> ) : (<Signin/>) )} exact/>
+                    {/* <Route path='/about' exact component={About} />
+                    <Route path='/services' exact component={Services} /> */}
+                    <Route
+                        path='/signin'
+                        render={() =>
+                            token ? <Redirect to='/' /> : <Signin />
+                        }
+                        exact
+                    />
                     <Route path='/form1' exact component={Form1} />
                     <Route path='/form16' exact component={Form16} />
                     <Route path='/form26' exact component={Form26} />
