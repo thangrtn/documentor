@@ -6,8 +6,8 @@ import Form26logo from '../../images/left.svg'
 import Form26logoright from '../../images/right.svg'
 import './form26.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+  
 
  
 export default function StuForm26() {
@@ -351,9 +351,7 @@ export default function StuForm26() {
                                                 </Form.Group>
                                                 <button className="btn-approve-new" onClick={() => {DeleteList(index)}} > ลบ </button>
                                             </Form.Row>
-                                            
                                         )
-                                        
                                     })}                             
                                 </div>
                             </div>                
@@ -375,18 +373,14 @@ export default function StuForm26() {
                         </div>
                     </div> */}
 
-                    
-
                     <div className="btng">
-
                         <Link to='/services'>
-                            <button className="btn-approve" onClick={() => {StuForm26()}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
+                            <button className="btn-approve" onClick={() => {}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
                         </Link>
 
                         <Link to='/services'>
                             <button className="btn-approve2" onClick={() => {createForm26()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
                         </Link>
-                   
                     </div>
                 </Container>
             </div>

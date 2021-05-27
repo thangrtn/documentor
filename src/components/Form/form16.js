@@ -451,7 +451,7 @@ function Stuform16() {
 
           <div className="btng">
             <Link to='/services'>
-              <button className="btn-approve" onClick={() => {Stuform16()}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
+              <button className="btn-approve" onClick={() => {}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
             </Link>
 
             <Link to='/services'>
