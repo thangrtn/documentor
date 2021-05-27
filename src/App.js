@@ -12,6 +12,9 @@ import Signin from './pages/signin';
 import Form1 from './pages/f01';
 import Form16 from './pages/f16';
 import Form26 from './pages/f26';
+import LastTeacher from './pages/lastteacher';
+import Mainteacher from './pages/mainteacher';
+
 import { Helmet } from 'react-helmet';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -52,6 +55,10 @@ function App() {
                     <Route path='/form1' exact component={Form1} />
                     <Route path='/form16' exact component={Form16} />
                     <Route path='/form26' exact component={Form26} />
+                    <Route path='/mainteacher' exact component={Mainteacher} />
+
+                    <Route path='/lastteacher' exact component={LastTeacher} />
+
                 </Switch>
             </div>
         </Router>
