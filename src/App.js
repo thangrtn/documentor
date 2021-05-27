@@ -13,6 +13,7 @@ import Form1 from './pages/f01';
 import Form16 from './pages/f16';
 import Form26 from './pages/f26';
 import { Helmet } from 'react-helmet';
+import Service from './components/Services/services'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -40,8 +41,7 @@ function App() {
                 <Header />
                 <Switch>
                     <Route path='/' exact component={Home} />
-                    {/* <Route path='/about' exact component={About} />
-                    <Route path='/services' exact component={Services} /> */}
+                    <Route path='/services' exact component={Service} />
                     <Route
                         path='/signin'
                         render={() =>
