@@ -8,8 +8,6 @@ import "./form16.css";
 import axios from "axios";
 
 function Stuform16() {
-  const [startdate, setStartdate] = useState(new Date().toISOString());
-  const [exdate, setExdate] = useState(new Date().toISOString());
   const [Title, setTitle] = useState("");
   const [Name, setName] = useState("");
   const [Studentcode, setStudentcode] = useState("");
@@ -387,10 +385,6 @@ function Stuform16() {
                         onChange={(e) => {
                           setStart_date(e.target.value);
                         }}
-                        value={startdate}
-                        onChange={(e) => {
-                          setStartdate(e.target.value);
-                        }}
                       />
                     </Form.Group>
 
@@ -403,10 +397,6 @@ function Stuform16() {
                         value={End_date}
                         onChange={(e) => {
                           setEnd_date(e.target.value);
-                        }}
-                        value={exdate}
-                        onChange={(e) => {
-                          setExdate(e.target.value);
                         }}
                       />
                     </Form.Group>
