@@ -4,8 +4,10 @@ import "./form01.css";
 import Form26logo from "../../images/left.svg";
 import Form26logoright from "../../images/right.svg";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Stuform01() {
+  let history = useHistory();
   const [Title, setTitle] = useState("");
   const [Name, setName] = useState("");
   const [Studentcode, setStudentcode] = useState("");
@@ -89,27 +91,21 @@ function Stuform01() {
             <div className="form-ro1">
               <Form>
                 <Form.Row>
-                  <Form.Group as={Col} sm={2} controlId="formGridEmail">
-                    <Form.Label>คำนำหน้าชื่อ</Form.Label>
-                    <Form.Control
-                      as="select"
-                      readOnly
-                      defaultValue="Choose..."
-                      value={Title}
-                      onChange={(e) => {
-                        setTitle(e.target.value);
-                      }}
-                    >
-                      <option>Choose...</option>
-                      <option>นาย</option>
-                      <option>นางสาว</option>
-                    </Form.Control>
+                  <Form.Group as={Col} sm={2} >
+                  <Form.Label>คำนำหน้าชื่อ</Form.Label>
+                  <Form.Control
+                    readOnly
+                    placeholder="คำนำหน้าชื่อ"
+                    value={Title}
+                    onChange={(e) => {
+                      setTitle(e.target.value);
+                    }}
+                  />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={3} controlId="formGridPassword">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>ชื่อ-นามสกุล</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="ชื่อ-นามสกุล"
                       value={Name}
@@ -119,10 +115,9 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={3} controlId="formGridPassword">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>รหัสนักศึกษา</Form.Label>
                     <Form.Control
-                      type="studentcode"
                       readOnly
                       placeholder="รหัสนักศึกษา"
                       value={Studentcode}
@@ -132,27 +127,21 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={2} >
                     <Form.Label>ภาคการศึกษา</Form.Label>
                     <Form.Control
-                      as="select"
                       readOnly
-                      defaultValue="Choose..."
+                      placeholder="ภาคการศึกษา"
                       value={Semeter}
                       onChange={(e) => {
                         setSemeter(e.target.value);
                       }}
-                    >
-                      <option>Choose...</option>
-                      <option>1</option>
-                      <option>2</option>
-                    </Form.Control>
+                    />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={2} >
                     <Form.Label>ปีการศึกษา</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="ปีการศึกษา"
                       value={Academicyear}
@@ -164,10 +153,9 @@ function Stuform01() {
                 </Form.Row>
 
                 <Form.Row>
-                  <Form.Group as={Col} sm={3} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>คณะ</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="คณะ"
                       value={Faculty}
@@ -177,10 +165,9 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={3} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>ภาควิชา/สาขาวิชา</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="ภาควิชา/สาขาวิชา"
                       value={Department}
@@ -190,41 +177,31 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridState">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>ระดับการศึกษา</Form.Label>
                     <Form.Control
-                      as="select"
                       readOnly
-                      defaultValue="Choose..."
+                      placeholder="ระดับการศึกษา"
                       value={Educationlevel}
                       onChange={(e) => {
                         setEducationlevel(e.target.value);
                       }}
-                    >
-                      <option>Choose...</option>
-                      <option>ปริญญาตรี</option>
-                      <option>ปริญญาโท</option>
-                      <option>ปริญญาเอก</option>
-                    </Form.Control>
+                    />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridState">
+                  <Form.Group as={Col} sm={3} >
                     <Form.Label>หลักสูตร</Form.Label>
                     <Form.Control
-                      as="select"
                       readOnly
-                      defaultValue="Choose..."
+                      placeholder="หลักสูตร"
                       value={Course}
                       onChange={(e) => {
                         setCourse(e.target.value);
                       }}
-                    >
-                      <option>Choose...</option>
-                      <option>ทั่วไป</option>
-                    </Form.Control>
+                    />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridZip">
+                  <Form.Group as={Col} sm={2} >
                     <Form.Label>ชั้นปี</Form.Label>
                     <Form.Control
                       readOnly
@@ -234,30 +211,25 @@ function Stuform01() {
                         setLevel(e.target.value);
                       }}
                     />
-                  </Form.Group>
+                    </Form.Group>
                 </Form.Row>
 
                 <Form.Row>
-                  <Form.Group as={Col} sm={2} controlId="formGridState">
+                  <Form.Group as={Col} sm={2} >
                     <Form.Label>สภาพนักศึกษา</Form.Label>
                     <Form.Control
-                      as="select"
                       readOnly
-                      defaultValue="Choose..."
+                      placeholder="สภาพนักศึกษา"
                       value={Stauts}
                       onChange={(e) => {
                         setStauts(e.target.value);
                       }}
-                    >
-                      <option>Choose...</option>
-                      <option>ปกติ</option>
-                    </Form.Control>
+                    />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={2} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={2} >
                     <Form.Label>GPAX</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="GPAX"
                       value={Gpax}
@@ -267,10 +239,9 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={4} >
                     <Form.Label>เบอร์โทร</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="เบอร์โทร"
                       value={Phone}
@@ -280,10 +251,9 @@ function Stuform01() {
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                  <Form.Group as={Col} sm={4} >
                     <Form.Label>Email</Form.Label>
                     <Form.Control
-                      type="email"
                       readOnly
                       placeholder="Email"
                       value={Email}
@@ -294,85 +264,14 @@ function Stuform01() {
                   </Form.Group>
                 </Form.Row>
               </Form>
-              <div class="form-ro1-bottom">
-                <h2 ClassName="htop2">กรอกคำร้อง</h2>
-                <Form>
-                  <Form.Row>
-                    <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                      <Form.Label>เรื่อง</Form.Label>
-                      <Form.Control
-                        type="เรื่อง"
-                        placeholder="เรื่อง"
-                        value={Teacher_name}
-                        onChange={(e) => {
-                          setTeacher_name(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-
-                    <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                      <Form.Label>เรียน</Form.Label>
-                      <Form.Control
-                        type="เรียน"
-                        placeholder="เรียน"
-                        value={To_name}
-                        onChange={(e) => {
-                          setStauts(e.target.value);
-                        }}
-                      >
-                        <option>Choose...</option>
-                        <option>active</option>
-                      </Form.Control>
-                    </Form.Group>
-
-                    <Form.Group as={Col} sm={2} controlId="formGridEmail">
-                      <Form.Label>GPAX</Form.Label>
-                      <Form.Control
-                        type="email"
-                        readOnly
-                        placeholder="GPAX"
-                        value={Gpax}
-                        onChange={(e) => {
-                          setGpax(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-
-                    <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                      <Form.Label>เบอร์โทร</Form.Label>
-                      <Form.Control
-                        type="email"
-                        readOnly
-                        placeholder="เบอร์โทร"
-                        value={Phone}
-                        onChange={(e) => {
-                          setPhone(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-
-                    <Form.Group as={Col} sm={4} controlId="formGridEmail">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        readOnly
-                        placeholder="Email"
-                        value={Email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-                  </Form.Row>
-                </Form>
-                <div class="form-ro1-bottom">
-                  <h2 ClassName="htop2">กรอกคำร้อง</h2>
+              
+                <div className="form-ro1-bottom">
+                  <h2 className="htop2">กรอกคำร้อง</h2>
                   <Form>
                     <Form.Row>
-                      <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                      <Form.Group as={Col} sm={4} >
                         <Form.Label>เรื่อง</Form.Label>
                         <Form.Control
-                          type="เรื่อง"
                           placeholder="เรื่อง"
                           value={Teacher_name}
                           onChange={(e) => {
@@ -381,10 +280,9 @@ function Stuform01() {
                         />
                       </Form.Group>
 
-                      <Form.Group as={Col} sm={4} controlId="formGridEmail">
+                      <Form.Group as={Col} sm={4} >
                         <Form.Label>เรียน</Form.Label>
                         <Form.Control
-                          type="เรียน"
                           placeholder="เรียน"
                           value={To_name}
                           onChange={(e) => {
@@ -395,11 +293,7 @@ function Stuform01() {
                     </Form.Row>
 
                     <Form.Row>
-                      <Form.Group
-                        as={Col}
-                        sm={12}
-                        controlId="exampleForm.ControlTextarea1"
-                      >
+                      <Form.Group as={Col} sm={12}>
                         <Form.Label>เนื่องจาก</Form.Label>
                         <Form.Control
                           as="textarea"
@@ -416,7 +310,6 @@ function Stuform01() {
                 </div>
               </div>
             </div>
-          </div>
 
           <div className="main-content">
             <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
@@ -444,7 +337,7 @@ function Stuform01() {
             <button
               className="btn-approve"
               onClick={() => {
-                Stuform01();
+                history.push('/services')
               }}
             >
               <img className="iconleft" src={Form26logo} alt="left" /> ยกเลิก{" "}
