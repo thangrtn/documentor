@@ -6,8 +6,10 @@ import Form26logo from "../../images/left.svg";
 import Form26logoright from "../../images/right.svg";
 import "./form16.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 function Stuform16() {
+
   const [Title, setTitle] = useState("");
   const [Name, setName] = useState("");
   const [Studentcode, setStudentcode] = useState("");
@@ -425,7 +427,7 @@ function Stuform16() {
             </div>
           </div>
 
-          <div className="main-content">
+          {/* <div className="main-content">
             <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
             <div className="form-ro1">
               <Form>
@@ -445,26 +447,16 @@ function Stuform16() {
                 </Form.Row>
               </Form>
             </div>
-          </div>
+          </div> */}
 
           <div className="btng">
-            <button
-              className="btn-approve"
-              onClick={() => {
-                Stuform16();
-              }}
-            >
-              <img className="iconleft" src={Form26logo} alt="left" /> ยกเลิก{" "}
-            </button>
-            <button
-              className="btn-approve2"
-              onClick={() => {
-                createForm16();
-              }}
-            >
-              ยืนยัน{" "}
-              <img className="iconright" src={Form26logoright} alt="right" />
-            </button>
+            <Link to='/services'>
+              <button className="btn-approve" onClick={() => {Stuform16()}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
+            </Link>
+
+            <Link to='/services'>
+              <button className="btn-approve2" onClick={() => {createForm16()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
+            </Link>
           </div>
         </Container>
       </div>

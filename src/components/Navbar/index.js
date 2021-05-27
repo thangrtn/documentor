@@ -30,7 +30,7 @@ const Navbar = () => {
             </NavLink>
             <Bars />
             <NavMenu>
-                <NavLink className='font2' to='/main'>
+                <NavLink className='font2' to='/'>
                     หน้าหลัก
                 </NavLink>
                 <NavLink className='font2' to='/services'>

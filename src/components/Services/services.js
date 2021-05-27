@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const services = () => {
     return (
+        <div className="logo-service">
         <div className="box-ct">
             <h1 className="texthead">แบบฟอร์มเอกสาร</h1>
             <Row className="r-100">
@@ -27,6 +28,7 @@ const services = () => {
                     
                 </Col>
             </Row>
+        </div>
         </div>
     )
 }
