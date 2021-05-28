@@ -7,9 +7,13 @@ import Form26logoright from "../../images/right.svg";
 import "./form26.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
 
 export default function StuForm26() {
   let history = useHistory();
+  const MySwal = withReactContent(Swal)
   const [ListRequest, setListRequest] = useState([]);
   const [Title, setTitle] = useState("");
   const [Name, setName] = useState("");
@@ -26,8 +30,8 @@ export default function StuForm26() {
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
   const [Course_code, setCourse_code] = useState("");
-  const [Group_number, setGroup_number] = useState("");
-  const [Credit, setCredit] = useState("");
+  const [Group_number, setGroup_number] = useState(0);
+  const [Credit, setCredit] = useState(0);
   const [Type, setType] = useState("");
 
   useEffect(() => {
@@ -73,9 +77,21 @@ export default function StuForm26() {
         }
       )
       .then((response) => {
-        console.log(response.data);
+        if(response.data.status){
+            MySwal.fire({
+              icon: 'success',
+              title: 'success',
+              text: 'create form-RO26 success'
+            });
+          history.push('/services')
+        }
       })
       .catch((error) => {
+        MySwal.fire({
+          icon: 'error',
+          title: 'error',
+          text: 'cant create form-RO26,please try again!!'
+        });
         console.error(error);
       });
   };
@@ -85,15 +101,15 @@ export default function StuForm26() {
       ...ListRequest,
       {
         course_code: Course_code,
-        group_number: Group_number,
-        credit: Credit,
+        group_number: parseInt(Group_number),
+        credit: parseInt(Credit),
         type: Type,
       },
     ]);
 
     setCourse_code("");
-    setGroup_number("");
-    setCredit("");
+    setGroup_number(0);
+    setCredit(0);
     setType("");
   };
 
@@ -310,6 +326,7 @@ export default function StuForm26() {
                       <Form.Group as={Col} sm={2}>
                         <Form.Label>กลุ่ม</Form.Label>
                         <Form.Control
+                          min="1"
                           type="number"
                           placeholder="กลุ่ม"
                           value={Group_number}
@@ -321,6 +338,7 @@ export default function StuForm26() {
                       <Form.Group as={Col} sm={2}>
                         <Form.Label>หน่วยกิต</Form.Label>
                         <Form.Control
+                          min="1"
                           type="number"
                           placeholder="หน่วยกิต"
                           value={Credit}
@@ -376,6 +394,7 @@ export default function StuForm26() {
                               <Form.Control
                                 readOnly
                                 type="number"
+                                min="1"
                                 placeholder="รหัสวิชา"
                                 value={value.group_number}
                               />
@@ -385,6 +404,7 @@ export default function StuForm26() {
                               <Form.Control
                                 readOnly
                                 type="number"
+                                min="1"
                                 placeholder="รหัสวิชา"
                                 value={value.credit}
                               />

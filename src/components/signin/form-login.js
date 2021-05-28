@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './login-style.css';
-import { useHistory } from "react-router-dom"
 
 function FormLogin() {
-    let history = useHistory();
     const [Username, setUsername] = useState('');
     const [Password, setPassword] = useState('');
 
@@ -16,7 +14,8 @@ function FormLogin() {
             if(response.data.accessToken){
                 localStorage.setItem('username', Username);
                 localStorage.setItem('accessToken', response.data.accessToken);
-                history.push('/')
+                
+                window.location.reload();
             }
         }).catch((error) => {
             console.error(error)

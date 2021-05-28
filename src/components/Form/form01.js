@@ -5,9 +5,12 @@ import Form26logo from "../../images/left.svg";
 import Form26logoright from "../../images/right.svg";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Stuform01() {
   let history = useHistory();
+  const MySwal = withReactContent(Swal)
   const [Title, setTitle] = useState("");
   const [Name, setName] = useState("");
   const [Studentcode, setStudentcode] = useState("");
@@ -71,9 +74,21 @@ function Stuform01() {
         }
       )
       .then((response) => {
-        console.log(response.data);
+        if(response.data.status){
+            MySwal.fire({
+              icon: 'success',
+              title: 'success',
+              text: 'create form-RO26 success'
+            });
+          history.push('/services')
+        }
       })
       .catch((error) => {
+        MySwal.fire({
+          icon: 'error',
+          title: 'error',
+          text: 'cant create form-RO26,please try again!!'
+        });
         console.error(error);
       });
   };

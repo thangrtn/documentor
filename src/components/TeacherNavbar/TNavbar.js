@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../../images/logo.svg';
-import './App.css';
+import '../Navbar/App.css';
 
 import {
     Nav,
@@ -9,9 +9,9 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink
-} from './NavbarElements';
+} from '../Navbar/NavbarElements';
 
-const Navbar = () => {
+const TNavbar = () => {
     const username = localStorage.getItem('username');
 
     const Userprofile = () => {
@@ -27,7 +27,6 @@ const Navbar = () => {
                 ออกจากระบบ
               </button>  
             </div>
-            
         );
     };
 
@@ -47,7 +46,7 @@ const Navbar = () => {
                 <NavLink className='font2' to='/'>
                     หน้าหลัก
                 </NavLink>
-                <NavLink className='font2' to='/services'>
+                <NavLink className='font2' to='/teacher_request_list'>
                     แบบฟอร์ม
                 </NavLink>
                 {username ? (
@@ -65,4 +64,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default TNavbar;
