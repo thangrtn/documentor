@@ -22,6 +22,11 @@ const TNavbar = () => {
         );
     };
 
+    const Logout = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
+
     return (
         <Nav>
             <NavLink to='/main'>
@@ -43,6 +48,14 @@ const TNavbar = () => {
                         เข้าสู่ระบบ
                     </NavBtnLink>
                 )}
+              <button
+                className="btn-logout"
+                onClick={() => {
+                  Logout();
+                }}
+              >
+                ออกจากระบบ
+              </button>  
             </NavMenu>
             <NavBtn>
                 {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink>  */}

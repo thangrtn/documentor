@@ -29,22 +29,27 @@ axiosDefaults.baseURL = 'http://documentor-kmutt.me/api';
 
 export const Header = () => {
     const location = useLocation();
+    const token             = localStorage.getItem('accessToken');
     const myDecodedToken    = decodeToken(localStorage.getItem('accessToken'));
     const isMyTokenExpired  = isExpired(localStorage.getItem('accessToken'));
-    if(!isMyTokenExpired){
-        if (location.pathname !== '/signin') {
-            if(myDecodedToken && myDecodedToken['role'] === 'teacher' ){
-                return <TNavbar/>
-            }else{
-                return <Navbar />;
+    if (location.pathname !== '/signin') {
+        if(myDecodedToken && myDecodedToken['role'] === 'teacher' ){
+            if (token && isMyTokenExpired) { 
+                localStorage.clear();
+                window.location.reload(); 
             }
-        } else {
-            return '';
+            return <TNavbar/>
+        }else{
+            if (token && isMyTokenExpired) { 
+                localStorage.clear();
+                window.location.reload(); 
+            }
+            return <Navbar />;
         }
-    }else{
-        localStorage.clear()
-        window.location.reload();
+    } else {
+        return '';
     }
+    
 };
 
 function App() {
@@ -84,39 +89,39 @@ function App() {
                         path='/form1' 
                         exact
                         render={() =>
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/' /> : <Form1 />
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/signin' /> : <Form1 />
                         }
                     />
                     <Route 
                         path='/form16' 
                         exact
                         render={() =>
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/' /> : <Form16 />
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/signin' /> : <Form16 />
                         }
                     />
                     <Route 
                         path='/form26' 
                         exact
                         render={() =>
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/' /> : <Form26 />
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] !== 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/signin' /> : <Form26 />
                         }
                     />
                     <Route path='/teacher_request_list' 
                         exact 
                         render={() => 
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired)) ? <Redirect to='/' /> : <Mteacher />
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired)) ? <Redirect to='/signin' /> : <Mteacher />
                         } 
                     />
                     <Route path='/RO-01/:id' 
                         exact 
                         render={(prop) =>
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/' /> : <TeacherForm1 {...prop}/>
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/signin' /> : <TeacherForm1 {...prop}/>
                         } 
                     />
                     <Route path='/RO-16/:id' 
                         exact 
                         render={(prop) =>
-                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/' /> : <TeacherForm16 {...prop}/>
+                            !((myDecodedToken !== null) && (myDecodedToken['role'] === 'teacher' ? true : false) && (!isMyTokenExpired))  ? <Redirect to='/signin' /> : <TeacherForm16 {...prop}/>
                         } 
                     />
                     <Route path='/RO-26/:id' 

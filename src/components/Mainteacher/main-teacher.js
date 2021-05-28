@@ -21,8 +21,7 @@ function Mteacher() {
           })
       })
       .catch((err) => {
-        // localStorage.clear();
-        // history.push("/");
+        console.error(err)
       });
   }, []);
 
