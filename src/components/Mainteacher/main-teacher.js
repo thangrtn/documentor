@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./main-teacher.css";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { FaChevronDown } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Mteacher() {
   const [ListRequest, setListRequest] = useState([]);
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     axios
-      .get("/transaction/?sort=name&page=1&limit=10&filter_type=&order=acs", {
+      .get(`/transaction/?sort=name&page=${count}&limit=10&filter_type=&order=acs`, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("accessToken"),
         },
@@ -23,7 +23,7 @@ function Mteacher() {
       .catch((err) => {
         console.error(err)
       });
-  }, []);
+  }, [count]);
 
   return (
     <div className="content">  
@@ -32,7 +32,7 @@ function Mteacher() {
           <h2>คำร้องขอที่รอพิจารณา</h2>
         </div>
 
-        <div className="top-b">
+        {/* <div className="top-b">
           <button className="btnn">
             วันที่ล่าสุด <FaChevronDown />
           </button>
@@ -45,7 +45,7 @@ function Mteacher() {
           <button className="btnn">
             เรียงตามรหัส <FaChevronDown />
           </button>
-        </div>
+        </div> */}
 
         <div className="top-box">
           <Row>
@@ -79,8 +79,16 @@ function Mteacher() {
                             </div>
                         </Col>
                     );
-                })};       
+                })}     
           </Row>
+        </div>
+        <div className="bth-group">
+          { ((count >= 1) && (ListRequest.length === 10) )  ? (
+              <button className="btn-next" onClick={() => setCount(count + 1)}>
+                Next
+              </button>
+            ) : ''
+          }
         </div>
       </Container>
       <div className="logo"></div>
