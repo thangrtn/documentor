@@ -12,14 +12,9 @@
 
 .ctn2 {
     background-image: url('../../images/fter.svg');
-
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size:contain; 
-    height:1750px;
-
-    
-    
+    background-size:contain;  
 }
 
 @media only screen and (max-width: 600px) {

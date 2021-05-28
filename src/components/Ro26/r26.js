@@ -25,10 +25,7 @@ export default function Form26(prop) {
     const [Gpax, setGpax] = useState("");
     const [Phone, setPhone] = useState("");
     const [Email, setEmail] = useState("");
-    const [Course_code, setCourse_code] = useState("");
-    const [Group_number, setGroup_number] = useState("");
-    const [Credit, setCredit] = useState("");
-    const [Type, setType] = useState("");
+    const [Comment, setComment]    = useState("");
   
     useEffect(() => {
     const id = prop.match.params.id
@@ -39,7 +36,8 @@ export default function Form26(prop) {
           },
         })
         .then((res) => {
-          const userData = res.data.data;
+          const userData = res.data.data.user;
+          const detail   = res.data.data.mapping.documentRO26
           setEmail(userData["email"]);
           setTitle(userData["title"]);
           setName(userData["name"]);
@@ -60,57 +58,34 @@ export default function Form26(prop) {
         });
     }, []);
   
-    const createForm26 = () => {
-      axios
-        .post(
-          "/transaction/create-ro26",
-          {
-              subject : ListRequest
-          },
-          {
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("accessToken"),
-            },
-          }
-        )
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-  
-    const AddList = () => {
-      setListRequest([
-        ...ListRequest,
-        {
-          course_code: Course_code,
-          group_number: Group_number,
-          credit: Credit,
-          type: Type,
+    const ApproveForm = () => {
+      const id = prop.match.params.id
+    axios
+      .patch(
+        `/transaction/${id}`,{
+          comment : Comment
         },
-      ]);
-  
-      setCourse_code("");
-      setGroup_number("");
-      setCredit("");
-      setType("");
-    };
-  
-    const DeleteList = (id) => {
-      const list = ListRequest.filter((todo, todoIndex) => {
-        return todoIndex !== id;
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("accessToken"),
+          },
+        }
+      )
+      .then((response) => {
+        if(response.data.status){
+          history.push('/transection_status/RO-26')
+        }
+      })
+      .catch((error) => {
+        console.error(error);
       });
-  
-      setListRequest(list);
-    };
+  };
   
     return (
       <div className="ctn2">
         <div className="background-content">
           <div className="title">
-            <h2 className="htop">คำร้องขอลาป่วย/ลาป่วย (RO-26)</h2>
+            <h2 className="htop">ใบลงทะเบียนเพิ่ม-ลด-ถอน-เปลี่ยนกลุ่ม-เปลี่ยนรายวิชา (RO-26)</h2>
           </div>
   
           <Container>
@@ -295,70 +270,7 @@ export default function Form26(prop) {
                       </Form.Row>
                     </Form>
   
-                    <div className="form-ro1-bottom">
-                      <h2 className="htop3">เพิ่มคำร้องขอ</h2>
-                      <Row>
-                        <Form.Group as={Col} sm={3}>
-                          <Form.Label>รหัสวิชา</Form.Label>
-                          <Form.Control
-                            placeholder="รหัสวิชา"
-                            value={Course_code}
-                            onChange={(e) => {
-                              setCourse_code(e.target.value);
-                            }}
-                          />
-                        </Form.Group>
-                        <Form.Group as={Col} sm={2}>
-                          <Form.Label>กลุ่ม</Form.Label>
-                          <Form.Control
-                            type="number"
-                            placeholder="กลุ่ม"
-                            value={Group_number}
-                            onChange={(e) => {
-                              setGroup_number(e.target.value);
-                            }}
-                          />
-                        </Form.Group>
-                        <Form.Group as={Col} sm={2}>
-                          <Form.Label>หน่วยกิต</Form.Label>
-                          <Form.Control
-                            type="number"
-                            placeholder="หน่วยกิต"
-                            value={Credit}
-                            onChange={(e) => {
-                              setCredit(e.target.value);
-                            }}
-                          />
-                        </Form.Group>
-                        <Form.Group as={Col} sm={3}>
-                          <Form.Label>ประเภท</Form.Label>
-                          <Form.Control
-                            as="select"
-                            value={Type}
-                            onChange={(e) => {
-                              setType(e.target.value);
-                            }}
-                          >
-                            <option value="">Choose...</option>
-                            <option value="ADD_SUBJECT">เพิ่มรายวิชา</option>
-                            <option value="CHANGE_COURSE">ลดรายวิชา</option>
-                            <option value="WITHDRAWAL">ถอนรายวิชา</option>
-                          </Form.Control>
-                        </Form.Group>
-                        <Form.Group as={Col} sm={2}>
-                          <button
-                              className="btn-add-new"
-                              onClick={() => {
-                              AddList();
-                              }}
-                          >
-                              เพิ่ม
-                          </button>
-                        </Form.Group>
-                      </Row>
-                    </div>
-  
-                    <div className="form-ro1-bottom">
+                    {/* <div className="form-ro1-bottom">
                       <h2 className="htop3">รายการคำร้องขอ</h2>
                       <div className="list-request">
                         {ListRequest.map((value, index) => {
@@ -405,33 +317,47 @@ export default function Form26(prop) {
                                   <option value="WITHDRAWAL">ถอนรายวิชา</option>
                                 </Form.Control>
                               </Form.Group>
-                              <Form.Group as={Col} sm={2} >
-                                  <button
-                                  className="btn-approve-new"
-                                  onClick={() => {
-                                      DeleteList(index);
-                                  }}
-                                  >
-                                  {" "}
-                                  ลบ{" "}
-                                  </button>
-                              </Form.Group>
                             </Form.Row>
                           );
                         })}
                         ;
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
             </div>
-  
+
+            <div className="main-content">
+              <h2 className="htop2">กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</h2>
+              <div className="form-ro1">
+                <Form>
+                  <Form.Row>
+                    <Form.Group
+                      as={Col}
+                      sm={12}
+                    >
+                      <Form.Label>กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder="กรุณาระบุความคิดเห็นหรือข้อเสนอแนะ"
+                        value={Comment}
+                        onChange={(e) => {
+                            setComment(e.target.value);
+                        }}
+                      />
+                    </Form.Group>
+                  </Form.Row>
+                </Form>
+              </div>
+            </div>                    
+            
             <div className="btng">
               <button
                 className="btn-approve"
                 onClick={() => {
-                  history.push('/services')
+                  history.push('/teacher_request_list')
                 }}
               >
                 <img className="iconleft" src={Form26logo} alt="left" /> ยกเลิก{" "}
@@ -439,7 +365,7 @@ export default function Form26(prop) {
               <button
                 className="btn-approve2"
                 onClick={() => {
-                  createForm26();
+                  ApproveForm();
                 }}
               >
                 ยืนยัน{" "}

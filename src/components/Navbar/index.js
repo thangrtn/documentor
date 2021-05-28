@@ -18,9 +18,23 @@ const Navbar = () => {
         return (
             <div className='user-profile'>
                 <p className='user-name'>{username}</p>
+                <button
+                className="btn-logout"
+                onClick={() => {
+                  Logout();
+                }}
+              >
+                ออกจากระบบ
+              </button>  
             </div>
+            
         );
     };
+
+    const Logout = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
 
     return (
         <Nav>

@@ -18,6 +18,14 @@ const TNavbar = () => {
         return (
             <div className='user-profile'>
                 <p className='user-name'>{username}</p>
+                <button
+                className="btn-logout"
+                onClick={() => {
+                  Logout();
+                }}
+              >
+                ออกจากระบบ
+              </button>  
             </div>
         );
     };
@@ -48,14 +56,6 @@ const TNavbar = () => {
                         เข้าสู่ระบบ
                     </NavBtnLink>
                 )}
-              <button
-                className="btn-logout"
-                onClick={() => {
-                  Logout();
-                }}
-              >
-                ออกจากระบบ
-              </button>  
             </NavMenu>
             <NavBtn>
                 {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink>  */}
