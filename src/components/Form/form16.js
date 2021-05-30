@@ -76,7 +76,7 @@ function Stuform16() {
           attach_one: Attach_one,
           attach_two: Attach_two,
           wish: Wish,
-          time_period: Time_period,
+          time_period: parseInt(Time_period),
           start_date: Start_date,
           end_date: End_date,
         },
@@ -93,7 +93,7 @@ function Stuform16() {
               title: 'success',
               text: 'create form-RO26 success'
             });
-          history.push('/services')
+            history.push('/services')
         }
       })
       .catch((error) => {
@@ -352,6 +352,9 @@ function Stuform16() {
                     <Form.Group as={Col} sm={4}>
                       <Form.Label>ระยะเวลา</Form.Label>
                       <Form.Control
+                        type="number"
+                        min="1"
+                        step="any"
                         placeholder="ระยะเวลา"
                         value={Time_period}
                         onChange={(e) => {
