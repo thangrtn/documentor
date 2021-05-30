@@ -16,7 +16,7 @@ function Mteacher() {
         },
       })
       .then((res) => {
-          res.data.data.map((data , index) => {
+          res.data.data.map((data) => {
             setListRequest(ListRequest => [...ListRequest, data]);
           })
       })
@@ -32,54 +32,40 @@ function Mteacher() {
           <h2>คำร้องขอที่รอพิจารณา</h2>
         </div>
 
-        {/* <div className="top-b">
-          <button className="btnn">
-            วันที่ล่าสุด <FaChevronDown />
-          </button>
-          <button className="btnn">
-            ประเภทคำร้อง <FaChevronDown />
-          </button>
-          <button className="btnn">
-            เรียงตามชื่อ <FaChevronDown />
-          </button>
-          <button className="btnn">
-            เรียงตามรหัส <FaChevronDown />
-          </button>
-        </div> */}
-
         <div className="top-box">
           <Row>
-                {ListRequest.map((item ,index) => {
-                    return (
-                        <Col sm={12} key={index}>
-                            <div className="top-box-new">
-                                <div className="bx-new">
-                                        <Form.Row>
-                                            <Form.Group as={Col} sm={2}>
-                                                {item['create_date'].slice(0 , 10)}
-                                            </Form.Group>
+                { (ListRequest.length) > 0 ? (ListRequest.map(function(item ,index) {
+                  return (
+                    <Col sm={12} key={index}>
+                        <div className="top-box-new">
+                            <div className="bx-new">
+                              <Form.Row>
+                                  <Form.Group as={Col} sm={2}>
+                                      {item['create_date'].slice(0 , 10)}
+                                  </Form.Group>
 
-                                            <Form.Group as={Col} sm={3}>
-                                                {item['type']['type_name']}
-                                            </Form.Group>
+                                  <Form.Group as={Col} sm={3}>
+                                      {item['type']['type_name']}
+                                  </Form.Group>
 
-                                            <Form.Group as={Col} sm={3}>
-                                                {item['user']['name']}
-                                            </Form.Group>
+                                  <Form.Group as={Col} sm={3}>
+                                      {item['user']['name']}
+                                  </Form.Group>
 
-                                            <Form.Group as={Col} sm={2}>
-                                                {item['user']['studentInfo']['student_code']}
-                                            </Form.Group>
+                                  <Form.Group as={Col} sm={2}>
+                                      {item['user']['studentInfo']['student_code']}
+                                  </Form.Group>
 
-                                            <Form.Group as={Col} sm={2}>
-                                                <Link className="btn-cl" to={`/${item['type']['type_name'].slice(0,5)}/${item.id}`}>รายละเอียด</Link>
-                                            </Form.Group>
-                                        </Form.Row>
-                                </div>
+                                  <Form.Group as={Col} sm={2}>
+                                      <Link className="btn-cl" to={`/${item['type']['type_name'].slice(0,5)}/${item.id}`}>รายละเอียด</Link>
+                                  </Form.Group>
+                              </Form.Row>
                             </div>
-                        </Col>
-                    );
-                })}     
+                        </div>
+                    </Col>
+                  )}
+                  )) : ('')
+                };     
           </Row>
         </div>
         <div className="bth-group">

@@ -7,7 +7,6 @@ import {
     NavLink,
     Bars,
     NavMenu,
-    NavBtn,
     NavBtnLink
 } from './NavbarElements';
 
@@ -43,7 +42,7 @@ const Navbar = () => {
                 <h1 className='font1'>Documentor</h1>
             </NavLink>
             <Bars />
-            <NavMenu>
+            <NavMenu className="pd">
                 <NavLink className='font2' to='/'>
                     หน้าหลัก
                 </NavLink>
@@ -58,9 +57,6 @@ const Navbar = () => {
                     </NavBtnLink>
                 )}
             </NavMenu>
-            <NavBtn>
-                {/* <NavBtnLink to='/signin'>Sign In</NavBtnLink>  */}
-            </NavBtn>
         </Nav>
     );
 };

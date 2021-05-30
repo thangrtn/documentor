@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.pd{
+    padding: 0 20px;
+}
+
 .btn-logout{
     padding: 0 10px;
     border: 2px solid red;

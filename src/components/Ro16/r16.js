@@ -74,7 +74,7 @@ export default function Form16(prop) {
         .catch((err) => {
           console.error(err);
         });
-    }, []);
+    }, [prop.match.params.id]);
   
     const ApproveForm = () => {
         const id = prop.match.params.id
