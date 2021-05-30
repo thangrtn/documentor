@@ -91,7 +91,7 @@ function Stuform16() {
             MySwal.fire({
               icon: 'success',
               title: 'success',
-              text: 'create form-RO26 success'
+              text: 'create form-RO16 success'
             });
             history.push('/services')
         }
@@ -100,7 +100,7 @@ function Stuform16() {
         MySwal.fire({
           icon: 'error',
           title: 'error',
-          text: 'cant create form-RO26,please try again!!'
+          text: 'cant create form-RO16,please try again!!'
         });
         console.error(error);
       });

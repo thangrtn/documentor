@@ -353,7 +353,7 @@ export default function Form26(prop) {
             
             <div className="btng">
               <button
-                className="btn-approve"
+                className="btn-approve-update1"
                 onClick={() => {
                   history.push('/teacher_request_list')
                 }}
@@ -361,7 +361,7 @@ export default function Form26(prop) {
                 <img className="iconleft" src={Form26logo} alt="left" /> ยกเลิก{" "}
               </button>
               <button
-                className="btn-approve2"
+                className="btn-approve-update2"
                 onClick={() => {
                   ApproveForm();
                 }}

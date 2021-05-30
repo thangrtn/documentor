@@ -6,17 +6,6 @@
     z-index: 1;
 }
 
-.logo {
-    background-image: url('../../images/footform.svg');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size:contain; 
-    height:100%;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
-}
 
 .top-x h2 {
     color: #FFA012;
@@ -55,7 +44,7 @@ button.btnn {
 
 .top-box {
     margin-top: 30px;   
-    padding-bottom: 260px;    
+    padding-bottom: 10px;    
 }
 
 .top-box-new {
@@ -85,11 +74,7 @@ button.btnn {
     color: #ffa012;
 }
 
-.bth-group{
-    position: fixed;
-    bottom: 10%;
-    right: 10%;
-}
+
 
 .bx {
     position: relative;
@@ -109,6 +94,16 @@ button.btnn {
     color: #ffa012;
     background-color: white;
     width: 120px;
+    left: 47%;
+    top: 5%;
+    margin-bottom: 50px;
+    position: relative;
+    
+}
+.btn-next:hover {
+    background-color: #ffa012;
+    color:white;
+    transition: 0.25;
 }
 
 .bx-new {
