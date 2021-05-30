@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col , Row} from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import { Form } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import './r26.css';
@@ -10,7 +10,6 @@ import Form26logoright from "../../images/right.svg";
  
 export default function Form26(prop) {
     let history = useHistory();
-    const [ListRequest, setListRequest] = useState([]);
     const [Title, setTitle] = useState("");
     const [Name, setName] = useState("");
     const [Studentcode, setStudentcode] = useState("");
@@ -37,7 +36,6 @@ export default function Form26(prop) {
         })
         .then((res) => {
           const userData = res.data.data.user;
-          const detail   = res.data.data.mapping.documentRO26
           setEmail(userData["email"]);
           setTitle(userData["title"]);
           setName(userData["name"]);
@@ -56,7 +54,7 @@ export default function Form26(prop) {
         .catch((err) => {
           console.error(err);
         });
-    }, []);
+    }, [prop.match.params.id]);
   
     const ApproveForm = () => {
       const id = prop.match.params.id

@@ -42,7 +42,7 @@ const TNavbar = () => {
                 <h1 className='font1'>Documentor</h1>
             </NavLink>
             <Bars />
-            <NavMenu>
+            <NavMenu className="pd">
                 <NavLink className='font2' to='/'>
                     หน้าหลัก
                 </NavLink>

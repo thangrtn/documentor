@@ -30,7 +30,6 @@
 
 button.btnn {
     float: right;
-    
     align-items: center;
     border: 1px solid #FFA012;
     background-color: #FFA012;
@@ -42,10 +41,8 @@ button.btnn {
     justify-content: center;
     align-items: center;
     padding: 13px 12px
-    
-    
-
 }
+
 .lg {
     color: white;
 }
@@ -71,12 +68,8 @@ button.btnn {
     align-items: center;
 }
 
-bx-new>.form-row>.form-group {
+.form-group {
     margin-bottom: 0 !important;
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .form-row{
