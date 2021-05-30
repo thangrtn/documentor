@@ -91,48 +91,6 @@ button.btngreen {
 }
 
 
-.btn-approve {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 13px 12px;
-    width: 106px;
-    height: 49px;
-    left: 40%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
-    color: #FFA012;
-    border: none;
-    cursor: pointer;
-}
-.btn-approve:focus {
-    outline: none;
-}
-
-.btn-approve2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 13px 12px;
-    width: 106px;
-    height: 49px;
-    left: 40%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 40px;
-    background: #FFA012;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 30px;
-    color :#FFFFFF;
-    border: none;
-    cursor: pointer;
-}
-
 .btng {
     width: 100%;
     display: flex !important;
@@ -152,4 +110,53 @@ button.btngreen {
 .iconpolygon {
     margin-right: 2%;
     
+}
+
+.btn-approve-update1 {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px;
+    width: 106px;
+    height: 49px;
+    left: 40%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: rgb(255, 99, 99);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-approve-update1:focus {
+    outline: none;
+}
+
+.btn-approve-update2 {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 12px;
+    width: 106px;
+    height: 49px;
+    left: 40%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    background: rgb(66, 223, 66);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    color :white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-approve-update2:focus {
+    outline: none;
 }
