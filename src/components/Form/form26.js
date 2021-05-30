@@ -448,7 +448,7 @@ export default function StuForm26() {
 
           <div className="btng">
             <button
-              className="btn-approve"
+              className="btn-approve-update1"
               onClick={() => {
                 history.push('/services')
               }}
@@ -456,7 +456,7 @@ export default function StuForm26() {
               <img className="iconleft" src={Form26logo} alt="left" /> ยกเลิก{" "}
             </button>
             <button
-              className="btn-approve2"
+              className="btn-approve-update2"
               onClick={() => {
                 createForm26();
               }}

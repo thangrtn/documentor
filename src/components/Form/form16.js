@@ -414,11 +414,11 @@ function Stuform16() {
 
           <div className="btng">
             <Link to='/services'>
-              <button className="btn-approve" onClick={() => {}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
+              <button className="btn-approve-update1" onClick={() => {}} ><img className="iconleft" src={Form26logo} alt="left" to="/services"/> ยกเลิก </button>
             </Link>
 
             <Link to='/services'>
-              <button className="btn-approve2" onClick={() => {createForm16()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
+              <button className="btn-approve-update2" onClick={() => {createForm16()}} >ยืนยัน <img className="iconright" src={Form26logoright} alt="right"/></button> 
             </Link>
           </div>
         </Container>
