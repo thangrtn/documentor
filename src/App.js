@@ -25,7 +25,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let axiosDefaults = require('axios/lib/defaults');
-axiosDefaults.baseURL = 'http://documentor-kmutt.me/api';
+axiosDefaults.baseURL = 'https://documentor-kmutt.me/api';
 
 export const Header = () => {
     const location = useLocation();
