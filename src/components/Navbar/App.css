@@ -8,6 +8,28 @@
     padding: 0;
 }
 
+.pd{
+    padding: 0 20px;
+}
+
+.btn-logout{
+    padding: 0 10px;
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 50px;
+    color: white;
+    height: 40px;
+    margin: 20px;
+}
+
+.user-name{
+    margin: auto;
+}
+
+.user-profile{
+    display: flex;
+}
+
 .h1 {
     margin: 16px;
     color: #FFA012;
@@ -15,6 +37,7 @@
 
 .font1 {
     font-family: 'Roboto', sans-serif;
+    
 }
 
 .font2 {
@@ -32,7 +55,3 @@
     bottom: 0;
 }
 
-.app {
-    height: 100vh;
-    width: 100%;
-}
