@@ -9,6 +9,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import Home from './pages';
+import Landing from './pages/landingpage';
 import Mteacher from './pages/mainteacher'
 import Signin from './pages/signinpage';
 import TNavbar from './components/TeacherNavbar/TNavbar'
@@ -67,7 +68,7 @@ function App() {
             <div className='app'>
                 <Header />
                 <Switch>
-                    <Route path='/' exact component={Home} />
+                    <Route path='/' exact component={Landing} />
                     <Route 
                         path='/services' 
                         exact
