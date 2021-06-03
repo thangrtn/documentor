@@ -49,19 +49,16 @@ export const Header = () => {
     } else {
         return '';
     }
-    
 };
 
 function App() {
     const token             = localStorage.getItem('accessToken');
     const myDecodedToken    = decodeToken(localStorage.getItem('accessToken'));
     const isMyTokenExpired  = isExpired(localStorage.getItem('accessToken'));
-
     if (myDecodedToken && isMyTokenExpired ){
         localStorage.clear()
         window.location.reload();
     };
-
     return (
         <Router>
             <Helmet>

@@ -32,12 +32,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -50,6 +52,7 @@
       "last 1 safari version"
     ]
   },
+  
   "devDependencies": {
     "postcss": "^8.2.10",
     "postcss-loader": "^5.2.0"
