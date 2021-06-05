@@ -112,7 +112,7 @@ function Stuform16() {
     <div className="ctn">
       <div className="background-content">
         <div className="title">
-          <h2 className="htop">คำร้องขอลาป่วย/ลาป่วย (RO-16)</h2>
+          <h2 className="htop">คำร้องขอลาป่วย/ลากิจ (RO-16)</h2>
         </div>
 
         <Container>

@@ -125,7 +125,7 @@ export default function StuForm26() {
     <div className="ctn2">
       <div className="background-content">
         <div className="title">
-          <h2 className="htop">คำร้องขอลาป่วย/ลาป่วย (RO-26)</h2>
+          <h2 className="htop">ใบลงทะเบียนเพิ่ม-ลด-ถอน-เปลี่ยนกลุ่มเรียน (RO-26)</h2>
         </div>
 
         <Container>
